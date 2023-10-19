@@ -7,13 +7,14 @@ document.getElementById('citySelect').disabled=true;
             .catch(error => console.error(error));
     }
 
+    // Populate the continent dropdown
     const continentSelect = document.getElementById("continentSelect");
 
     fetchGet("http://worldtimeapi.org/api/timezones")
         .then(timezones => {
             const continents = {};
 
-    
+            // Extract continents from time zone names
             timezones.forEach(timezone => {
                 const parts = timezone.split("/");
                 if (parts.length > 1) {
@@ -62,7 +63,7 @@ document.getElementById('citySelect').disabled=true;
         const cityParts = selectedCity.split('/');
         const cityName = cityParts[cityParts.length - 1];
 
-
+        
         // Make a request to get the time for the selected city
         fetchGet(`http://worldtimeapi.org/api/timezone/${selectedCity}`)
             .then(data => {
