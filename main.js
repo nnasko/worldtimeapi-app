@@ -7,14 +7,13 @@ document.getElementById('citySelect').disabled=true;
             .catch(error => console.error(error));
     }
 
-    // Populate the continent dropdown
     const continentSelect = document.getElementById("continentSelect");
 
     fetchGet("http://worldtimeapi.org/api/timezones")
         .then(timezones => {
             const continents = {};
 
-            // Extract continents from time zone names
+    
             timezones.forEach(timezone => {
                 const parts = timezone.split("/");
                 if (parts.length > 1) {
@@ -54,11 +53,15 @@ document.getElementById('citySelect').disabled=true;
             });
     });
 
-    // When the city selection changes
     const citySelect = document.getElementById("citySelect");
     citySelect.addEventListener("change", () => {
         const selectedCity = citySelect.value;
         const timeResult = document.getElementById("timeResult");
+    
+        // Extract the city name from the selectedCity value
+        const cityParts = selectedCity.split('/');
+        const cityName = cityParts[cityParts.length - 1];
+
 
         // Make a request to get the time for the selected city
         fetchGet(`http://worldtimeapi.org/api/timezone/${selectedCity}`)
@@ -67,7 +70,7 @@ document.getElementById('citySelect').disabled=true;
                 let result = data.datetime.toString();
                 let time = result.substring(11,16)
 
-                timeResult.textContent = `Time in ${selectedCity}: ${time}`;
+                timeResult.textContent = `Time in ${cityName}: ${time}`;
             });
     });
 function check(){
