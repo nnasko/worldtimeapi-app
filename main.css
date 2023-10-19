@@ -1,31 +1,12 @@
-* {
-    background: #292929;
-}
-.main {
-text-align: center;
-padding: 12px;
-color: white;
-border: 2px solid #252323;
-}
-
 .dropdowns {
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 20px;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 255, 255);
     padding: 6px;
 }
-.bold {
-color: #ff16ec;
-font-weight: 700px;
-}
-.base {
-color: white;
-font-weight: 350px;
-}
 .animated {
-    background-repeat: no-repeat;
-    background-position: left top;
     -webkit-animation-duration: 10s;
+    margin-bottom: 30px;
     animation-duration: 10s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -72,7 +53,9 @@ font-weight: 350px;
  .fade-in-text {
     font-family: Arial;
     font-size: 15px;
-    animation: fadeIn 5s;
+    opacity: 0;
+    animation: fadeIn 7s;
+    animation-fill-mode: forwards;
   }
 
 @keyframes fadeIn {
@@ -83,3 +66,28 @@ font-weight: 350px;
 .text {
     padding-bottom: 15px;
 }
+.time {
+   margin-top: 15px;
+}
+.main {
+   font-family: 'Calligraffitti', cursive;
+   font-weight: 700;
+   font-size: 25px;
+   position: absolute;
+   text-shadow: -15px 5px 20px #ced0d3;
+   top: 20%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   letter-spacing: 0.02em;
+   text-align: center;
+   color: #ffffff;
+   text-shadow: 2px 2px 0px #FFB650, 
+     3px 3px 0px #FFD662, 
+     4px 4px 0px  #FF80BF, 
+     5px 5px 0px #EF5097, 
+     6px 6px 0px #6868AC, 
+     7px 7px 0px #90B1E0;
+ }
+ body {
+   background: #6868AC;
+ }

@@ -4,22 +4,18 @@
     <title>World Time</title>
     <link href="main.css" rel="stylesheet">
 </head>
-<body> 
     <div class="main">
         <h1 class="base animated bounceInDown">Time using <span class="bold animated bounceInDown">API's</span></h1>
         <p class="base animated bounceInDown text">by <span class="bold text">nasko</span></p>
-    </div>
-    <div id="cityselector" class="main animate fade-in-text">  
-    <select id="continentSelect" class="dropdowns" onchange="check()">
+    <select id="continentSelect" class="dropdowns fade-in-text" onchange="check()">
         <option value="">Select Continent</option>
     </select>
-
-    <select id="citySelect" class="dropdowns">
+    <select id="citySelect" class="dropdowns fade-in-text">
+        <option value="">Select City</option>
     </select>
+    <div id="timeResult" class="time">
     </div>
-    <div id="timeResult" class="main">
-        <!-- Time information will be displayed here -->
     </div>
     <script src="main.js"></script>
-</body>
+</body>78909
 </html>
