@@ -10,7 +10,7 @@ document.getElementById('citySelect').disabled=true;
     // Populate the continent dropdown
     const continentSelect = document.getElementById("continentSelect");
 
-    fetchGet("http://worldtimeapi.org/api/timezones")
+    fetchGet("https://worldtimeapi.org/api/timezones")
         .then(timezones => {
             const continents = {};
 
@@ -37,7 +37,7 @@ document.getElementById('citySelect').disabled=true;
         const citySelect = document.getElementById("citySelect");
 
         // Make a request to get the cities for the selected continent
-        fetchGet(`http://worldtimeapi.org/api/timezone/${selectedContinent}`)
+        fetchGet(`https://worldtimeapi.org/api/timezone/${selectedContinent}`)
             .then(data => {
                 // Clear the city dropdown
                 citySelect.innerHTML = '<option value="" class="rounded">Select City</option>';
@@ -65,7 +65,7 @@ document.getElementById('citySelect').disabled=true;
 
         
         // Make a request to get the time for the selected city
-        fetchGet(`http://worldtimeapi.org/api/timezone/${selectedCity}`)
+        fetchGet(`https://worldtimeapi.org/api/timezone/${selectedCity}`)
             .then(data => {
                 // Display the time information
                 let result = data.datetime.toString();
